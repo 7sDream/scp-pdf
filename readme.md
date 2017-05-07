@@ -17,7 +17,7 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 最新版包含的主要内容：
 
 * SCP 001 的全部提案
-* SCP 002
+* SCP 002 - 010
 
 # 预览
 
@@ -73,17 +73,19 @@ Emoji 使用 Noto Emoji
 
 ## 帮忙
 
-按照相同的格式排版一篇试试看……我弄了一些 macro 之类的来辅助排版，常用的格式应该都没问题了。
+按照相同的格式排版一篇试试看，我弄了一些 macro 之类的来辅助排版，常用的格式应该都没问题了。
 
-如果是第一次 PR 需要看一眼 editors.tex 和 version.tex，加上自己。
+从 dev 分支新建一个分支，然后加上你的新篇目，或者做一些校对工作之类的。
+
+如果是第一次 PR 需要看一眼 editors.tex 和 version.tex，加上自己，如果是校对工作需要在发布说明部分描述一下，新增篇目就不用了，因为发布的时候会统一写。
 
 然后 PR 到 dev 分支，应该就行了。
 
 ## LICENSE
 
-我也不知道这种东西需要什么 LICENSE……
+我也不知道这种东西需要什么 LICENSE。
 
-反正只要不那 PDF 印书卖钱，其他就随意吧……
+反正只要不拿 PDF 印书卖钱，不违反 SCP 原作者们和译者的协议，我这里就随意吧。
 
 [logo]: https://raw.githubusercontent.com/7sDream/scp-pdf/master/images/git_logo.png
 [all-release]: https://github.com/7sDream/scp-pdf/releases
