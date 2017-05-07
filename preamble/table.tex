@@ -1,0 +1,10 @@
+% 表格格式
+
+\usepackage{array}
+\usepackage{tabularx}
+
+% 表格标题行加高
+\renewcommand*{\arraystretch}{1.5}
+
+% 定长多行居中
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}

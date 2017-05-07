@@ -1,0 +1,45 @@
+% 快捷命令
+
+% 段落间空行
+\newcommand{\vs}{\vspace{12pt}}
+\newcommand{\vsl}{\vspace{24pt}}
+
+% 文本颜色
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\green}{\textcolor{green}}
+\newcommand{\tred}{\textcolor{textred}}
+\newcommand{\wred}{\textcolor{warningred}}
+\newcommand{\linkcolor}{\textcolor{magenta}}
+
+% 文本粗体斜体
+\newcommand{\ii}{\textit}
+\newcommand{\bb}{\textbf}
+\newcommand{\bi}[1]{\textit{\textbf{#1}}}
+\newcommand{\uu}{\underline}
+\newcommand{\bu}[1]{\underline{\textbf{#1}}}
+\newcommand{\dd}{\sout}
+
+% 居中
+\newcommand{\cl}[1]{\begin{center}#1\end{center}}
+
+% 字体大小
+\newcommand{\g}[1]{{\large #1}}
+\newcommand{\Gg}[1]{{\Large #1}}
+\newcommand{\GG}[1]{{\LARGE #1}}
+\newcommand{\Hg}[1]{{\Huge #1}}
+
+% URL
+\renewcommand{\url}[1]{\href{#1}{#1}}
+
+% hrule
+\newcommand{\hr}{
+\noindent\hfil
+\textcolor{boxrulecolor}{\rule{0.8\textwidth}{0.4pt}}
+\hfil
+}
+
+% 文本正上方标注
+\makeatletter
+\def\overtextnote#1{\expandafter\overtextnote@aux#1\@nil}
+\def\overtextnote@aux#1(#2)\@nil{\renewcommand{\arraystretch}{0.5}\begin{tabular}[b]{@{}c@{}}#2\\#1\end{tabular}\renewcommand{\arraystretch}{1.5}}
+\makeatother

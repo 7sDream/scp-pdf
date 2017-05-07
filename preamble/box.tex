@@ -1,0 +1,87 @@
+\newtcolorbox{scpbox}[1][]{
+	colback=boxcolor,
+	colframe=boxrulecolor,
+	boxrule=0.5pt,
+	leftright skip=0.1\linewidth,
+	#1
+}
+
+\newtcolorbox{scpboxc}[1][]{
+	colback=boxccolor,
+	colframe=boxcrulecolor,
+	boxrule=0.5pt,
+	center upper,
+	#1
+}
+
+\newtcolorbox{whitebox}[1][]{
+	colback=white,
+	colframe=black,
+	boxrule=0.5pt,
+	#1
+}
+
+\newtcolorbox{whiteboxbb}[1][]{
+	colback=white,
+	colframe=black,
+	boxrule=2pt,
+	#1
+}
+
+\newtcolorbox{scpboxbbwm}[1][]{
+	enhanced standard,
+	colback=boxwmcolor,
+	colframe=boxwmrulecolor,
+	boxrule=2pt,
+	watermark graphics=images/SCP.001.the.children.watermark.png,
+	watermark overzoom=0.7,
+	watermark opacity=1,
+	#1
+}
+
+\newtcolorbox{scpboxbbwmc}[1][]{
+	enhanced standard,
+	colback=boxwmcolor,
+	colframe=boxwmrulecolor,
+	boxrule=2pt,
+	center upper,
+	watermark graphics=images/SCP.001.the.children.watermark.png,
+	watermark overzoom=0.7,
+	watermark opacity=1,
+	#1
+}
+
+\newtcolorbox{scpboxbr}[1][]{
+	arc=4pt, outer arc=5pt,
+	colback=boxcolor,
+	colframe=boxrulecolor,
+	boxrule=1pt,
+	#1
+}
+
+\newtcolorbox{scpboxbrc}[1][]{
+	arc=5pt, outer arc=5pt,
+	colback=boxcolor,
+	colframe=boxrulecolor,
+	boxrule=1pt,
+	center upper,
+	#1
+}
+
+\newtcolorbox{scpboxcmd}[1][]{
+	colback=black,
+	colframe=black,
+	boxrule=0.5pt,
+	leftright skip=0.1\linewidth,
+	fontupper=\ttfamily, colupper=lightgreen,
+	#1
+}
+
+\newtcolorbox{scpdialog}[1][]{
+	hbox, parbox=true, before=\centering,
+	top=2pt, bottom=2pt, left=2pt, right=2pt,
+	boxrule=0.5pt, colback=white, colframe=black,
+	before upper=\begin{varwidth}{\textwidth},
+	after upper=\end{varwidth},
+	#1
+}

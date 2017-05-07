@@ -1,0 +1,30 @@
+% 字体字形设置
+
+% 字体格式支持
+\usepackage{fontspec}
+
+% 中文字体支持，开启粗体和斜体
+\usepackage[BoldFont, SlantFont]{xeCJK}
+
+% 设置默认中文字体
+\setCJKmainfont{Noto Sans CJK SC}
+
+\setCJKmonofont{Noto Sans Mono CJK SC}
+
+% 设置英文字体
+\setmainfont{Noto Sans}
+
+% 设置英文等宽字体
+\setmonofont{Fira Code}
+
+% 数学公式与数学符号
+\usepackage{amsmath,amssymb}
+
+ % 下划线，删除线
+\usepackage{underscore, ulem}
+
+% 让下划线，删除线支持中文
+\usepackage{CJKulem}
+
+% 导入特殊字符列表
+\input{preamble/special_chars.tex}

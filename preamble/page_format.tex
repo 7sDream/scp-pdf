@@ -1,0 +1,29 @@
+% ===== 页面整体格式控制 =====
+
+% 设置文档边距
+\usepackage[top=2.5cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+% 关闭段落缩进
+\setlength{\parindent}{0em}
+
+% 页眉页脚设置
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+
+% 页眉页脚增强
+\usepackage{etoolbox}
+
+% 章节标题页页开启页眉
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+% 清除空白目录页的标题和页码
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{\clearpage{\pagestyle{empty}\origdoublepage}}
+\let\cleardoublepage\clearemptydoublepage
+
+% 设置段落间距
+\setlength{\parskip}{12pt}
+
+% 图标题允许多行
+\usepackage{caption}

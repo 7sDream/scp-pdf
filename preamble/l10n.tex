@@ -1,0 +1,45 @@
+% 将样式调整为中文习惯
+
+% \today 日期样式调整
+\renewcommand{\today}{\number\year .\number\month .\number\day}
+
+% 设置图片前缀
+\renewcommand{\figurename}{图}
+
+% 设置章节标题格式
+\usepackage{titlesec}
+
+ % part 标题用阿拉伯数字编号
+\renewcommand{\thepart}{\arabic{part}}
+
+ % 设置 Part 标题样式，单独成页，Huge 字体，前缀使用第x章
+\titleformat{\part}[display]{\center\Huge\bf}{第 \thepart 章}{1em}{}
+
+ % 设置 Chapter 样式，不单独成页，Large 字体，前缀使用数字序号
+\titleformat{\chapter}[hang]{\center\Large\bf}{\thechapter.}{1em}{}
+
+% 设置目录格式
+\usepackage{titletoc}
+ % 改 content 为目录
+\renewcommand{\contentsname}{目录}
+ % 设置目录里 part 的样式
+ % 参数顺序 {section}{left-margin}{global-format}{numbered-entry-format}{numberless-entry-format}{page number format}{after}
+\titlecontents{part}[0pt]{}{}{}{\titlerule*[8pt]{$\cdot$}\bf\contentspage}{}
+ % 设置目录里 chapter 的样式
+\titlecontents{chapter}[2em]{}{\linkcolor{\thecontentslabel.\ }}{}{\titlerule*[8pt]{$\cdot$}\bf\contentspage}{}
+
+% 图片标题格式改为 <part>-<chapter>-<index> 形式
+\renewcommand{\thefigure}{\thepart-\thechapter-\arabic{figure}}
+
+% 附录文本修改为中文
+\renewcommand{\appendixpagename}{附录}
+\renewcommand{\appendixtocname}{附录}
+\renewcommand{\appendixname}{附录}
+\newcommand*{\附录autorefname}{附录}
+
+% 版本历史文本修改为中文
+\renewcommand{\vhhistoryname}{版本历史}
+\renewcommand{\vhversionname}{版本号}
+\renewcommand{\vhdatename}{发布日期}
+\renewcommand{\vhauthorname}{参与人员}
+\renewcommand{\vhchangename}{发布说明}
