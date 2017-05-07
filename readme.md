@@ -4,7 +4,7 @@
 
 # 下载
 
-[最新版 v1.0][last-release]
+[最新版 v1.1][last-release]
 
 [历史版本][all-release]
 
