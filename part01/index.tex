@@ -1,0 +1,26 @@
+\part[SCP-002 \textasciitilde\ 100]{
+	SCP-002 \textasciitilde\ 100 
+	\protect\footnote{
+		编者\QIS ：由于本章从SCP-002开始，所以序号也从2开始，便于阅读和编辑。
+	}
+}
+
+\setcounter{chapter}{1}
+
+\newcommand{\filename}{}
+
+\foreach \idx in {2,...,9} {
+    \renewcommand{\filename}{part01/00\idx}
+    \IfFileExists{\filename}{
+        \input{\filename}
+    }
+}
+
+\foreach \idx in {10,...,99} {
+    \renewcommand{\filename}{part01/0\idx}
+    \IfFileExists{\filename}{
+        \input{\filename}
+    }
+}
+
+\let\filename\undefined
