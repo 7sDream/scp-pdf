@@ -1,0 +1,20 @@
+% 设置文档边距
+\usepackage[a6paper, top=0.1cm, bottom=0.1cm, left=0.1cm, right=0.1cm, includefoot, includehead]{geometry}
+
+% 设置段落间距
+\setlength{\parskip}{6pt}
+
+% 设置章节上下距离
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{}{}{}
+\makeatother
+
+% 使用边框而不是颜色
+\hypersetup{
+    colorlinks=false,
+    allbordercolors=black,
+}
+
+% 链接颜色
+\newcommand{\linkcolor}[1]{{\color{black} #1}}

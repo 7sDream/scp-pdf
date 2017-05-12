@@ -7,21 +7,21 @@
 \usepackage[BoldFont, SlantFont]{xeCJK}
 
 % 设置默认中文字体
-\setCJKmainfont{Noto Sans CJK SC}
-
-\setCJKmonofont{Noto Sans Mono CJK SC}
+\setCJKmainfont[BoldFont={Noto Sans CJK SC Bold}, AutoFakeSlant=0.3]{Noto Sans CJK SC}
+\setCJKmonofont[BoldFont={Noto Sans Mono CJK SC Bold}, AutoFakeSlant=0.3]{Noto Sans Mono CJK SC}
 
 % 设置英文字体
 \setmainfont{Noto Sans}
-
-% 设置英文等宽字体
-\setmonofont{Fira Code}
+\setmonofont{SF Mono}
 
 % 数学公式与数学符号
 \usepackage{amsmath,amssymb}
 
+% 让 _ 字符能直接使用
+\usepackage{underscore}
+
  % 下划线，删除线
-\usepackage{underscore, ulem}
+\usepackage[normalem]{ulem}
 
 % 让下划线，删除线支持中文
 \usepackage{CJKulem}

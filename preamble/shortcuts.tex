@@ -9,15 +9,18 @@
 \newcommand{\green}{\textcolor{green}}
 \newcommand{\tred}{\textcolor{textred}}
 \newcommand{\wred}{\textcolor{warningred}}
-\newcommand{\linkcolor}{\textcolor{magenta}}
 
-% 文本粗体斜体
+% 文本粗体斜体各种线
 \newcommand{\ii}{\textit}
 \newcommand{\bb}{\textbf}
 \newcommand{\bi}[1]{\textit{\textbf{#1}}}
 \newcommand{\uu}{\underline}
-\newcommand{\bu}[1]{\underline{\textbf{#1}}}
 \newcommand{\dd}{\sout}
+\newcommand{\bu}[1]{\underline{\textbf{#1}}}
+\newcommand{\bd}[1]{\textbf{\sout{#1}}}
+
+% 文本等宽
+\newcommand{\mono}[1]{{\ttfamily #1}}
 
 % 居中
 \newcommand{\cl}[1]{\begin{center}#1\end{center}}
@@ -29,7 +32,7 @@
 \newcommand{\Hg}[1]{{\Huge #1}}
 
 % URL
-\renewcommand{\url}[1]{\href{#1}{#1}}
+\renewcommand{\url}[1]{\href{#1}{\nolinkurl{#1}}}
 
 % hrule
 \newcommand{\hr}{

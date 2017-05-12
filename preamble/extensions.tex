@@ -12,6 +12,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{calc}
+\usepackage[export]{adjustbox}
 
 % 固定图片位置
 \usepackage{float}
@@ -27,19 +28,19 @@
 \usepackage{varwidth}
 
 % 脚注
-\usepackage{footnote}
-\usepackage{footmisc}
+% \usepackage{footnote}
+\usepackage[hang, flushmargin, multiple]{footmisc}
+
+% 引用增强，包括url，自定义文字引用等
+% colorlinks = 可点击项有颜色， linkcolor = 文内交叉引用颜色，urlcolor = URL 颜色
+% hypertexnames = false 用于修复当重置了 chapter counter 时交叉引用无法正确链接的问题
+\usepackage[CJKbookmarks=true, colorlinks, linkcolor=magenta,  urlcolor=blue, hypertexnames=false, hyperindex=true, hyperfootnotes=true]{hyperref}
 
 % 表格
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{colortbl}
-\usepackage{longtable} 
-
-% 引用增强，包括url，自定义文字引用等
-% colorlinks = 可点击项有颜色， linkcolor = 文内交叉引用颜色，urlcolor = URL 颜色
-% hypertexnames = false 用于修复当重置了 chapter counter 时交叉引用无法正确链接的问题
-\usepackage[CJKbookmarks=true, colorlinks, linkcolor=magenta,  urlcolor=blue, hypertexnames=false]{hyperref}
+\usepackage{longtable}
 
 % 重复执行某命令
 \usepackage{multido}
