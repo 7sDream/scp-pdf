@@ -1,12 +1,26 @@
-\documentclass[openany, a4paper, tikz]{book}
+\documentclass[a4paper, openany, tikz]{book}
+
+% {pc} for normal pdf as a4paper
+% 
+% {kindle} for 6' pdf for kinder, less page margin, para skip, chapter skip, 
+% with hyperlink border, etc.
+
+\def\targetdevice{pc}
 
 \include{preamble/index}
 
 \include{editors}
 
-% \includeonly{cover, changelog, part2/index, docs/index}
+% \includeonly{cover, changelog, part1/index, docs/index, appendices/index}
+% \includeonly{cover, changelog, part2/index, docs/index, appendices/index}
+
+\hypersetup{
+    pdftitle={SCP基金会内部人员手册},
+    pdfauthor={SCP基金会中国分部}
+}
 
 \begin{document}
+
 
 \tcbsetforeverylayer{
 	arc=0pt, outer arc=0pt, 

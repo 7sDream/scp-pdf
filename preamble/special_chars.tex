@@ -1,9 +1,6 @@
 % 文档里的特殊字符使用特定字体显示
 % 如果需要增加字体，需要在 preface/font_char.tex 中增加
 
-% 目前支持的字体有：
-% dsm: DejaVu Sans Mono
-
 % 使用方法：\<font>{<char>}，文档中的 <char> 字符使用 <font> 字体显示。
 
 % 特殊字符单独支持
@@ -11,9 +8,31 @@
 
 % 定义特殊字符备用字体
 \newfontfamily{\emojifont}{Noto Emoji}
+\newfontfamily{\ntscjkscfont}{Noto Sans CJK SC}
+\newfontfamily{\djvsfont}{DejaVu Sans}
+\newfontfamily{\freeseriffont}{FreeSerif}
 
 % 定义辅助命令
 \DeclareTextFontCommand{\useemoji}{\emojifont}
-\newcommand{\emoji}[1]{\newunicodechar{#1}{\useemoji{#1}}}
+\DeclareTextFontCommand{\usentscjksc}{\ntscjkscfont}
+\DeclareTextFontCommand{\usedjvs}{\djvsfont}
+\DeclareTextFontCommand{\usefreeserif}{\freeseriffont}
 
+\newcommand{\emoji}[1]{\newunicodechar{#1}{\useemoji{#1}}}
+\newcommand{\ntscjksc}[1]{\newunicodechar{#1}{\usentscjksc{#1}}}
+\newcommand{\djvs}[1]{\newunicodechar{#1}{\usedjvs{#1}}}
+\newcommand{\freeserif}[1]{\newunicodechar{#1}{\usefreeserif{#1}}}
+
+% 
 \emoji{🔥}
+
+% SCP-001.the.factory
+\ntscjksc{⋯}
+
+% SCP-001.the.chil
+\freeserif{❚}
+
+% SCP-001.a.record
+\ntscjksc{▷}
+\ntscjksc{▽}
+\ntscjksc{⦿}

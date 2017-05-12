@@ -15,8 +15,8 @@
  % 设置 Part 标题样式，单独成页，Huge 字体，前缀使用第x章
 \titleformat{\part}[display]{\center\Huge\bf}{第 \thepart 章}{1em}{}
 
- % 设置 Chapter 样式，不单独成页，Large 字体，前缀使用数字序号
-\titleformat{\chapter}[hang]{\center\Large\bf}{\thechapter.}{1em}{}
+ % 设置 Chapter 样式，标号与章节名同行，Large 字体，前缀使用数字序号，减少上部间距
+\titleformat{\chapter}[hang]{\center\Large\bf}{\thechapter.}{1em}{}\titlespacing*{\chapter}{0pt}{-30pt}{40pt}
 
 % 设置目录格式
 \usepackage{titletoc}
