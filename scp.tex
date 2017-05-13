@@ -5,14 +5,14 @@
 % {kindle} for 6' pdf for kinder, less page margin, para skip, chapter skip, 
 % with hyperlink border, etc.
 
-\def\targetdevice{kindle}
+\def\targetdevice{pc}
 
 \include{preamble/index}
 
 \include{editors}
 
-% \includeonly{cover, changelog, part1/index, docs/index, appendices/index}
-% \includeonly{cover, changelog, part2/index, docs/index, appendices/index}
+% \includeonly{cover, changelog, part00/index, docs/index, appendices/index}
+% \includeonly{cover, changelog, part01/index, docs/index, appendices/index}
 
 \hypersetup{
     pdftitle={SCP基金会内部人员手册},
@@ -33,20 +33,22 @@
 
 \include{cover}
 
-\include{changelog}
-
 \tableofcontents
 
 \mainmatter
 
-\include{part1/index}
+\include{part00/index}
 
-\include{part2/index}
+\include{part01/index}
 
 \include{tale/index}
 
 \include{docs/index}
 
 \include{appendices/index}
+
+\backmatter
+
+\include{changelog}
 
 \end{document}
