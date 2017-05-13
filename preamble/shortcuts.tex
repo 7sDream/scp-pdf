@@ -43,9 +43,8 @@
 
 % 文本正上方标注
 \makeatletter
-\edef\mytemp{\targetdevice}
 \def\overtextnote#1{\expandafter\overtextnote@aux#1\@nil}
-\expandafter\ifstrequal{\mytemp}{pc}{
+\ifthenelse{\equal{\targetdevice}{pc}}{
 	\def\overtextnote@aux#1(#2)\@nil{\renewcommand{\arraystretch}{0.5}\begin{tabular}[b]{@{}c@{}}#2\\#1\end{tabular}\renewcommand{\arraystretch}{1.5}}
 }{
     \def\overtextnote@aux#1(#2)\@nil{#1（#2）}
