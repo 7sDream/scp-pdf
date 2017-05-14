@@ -78,11 +78,17 @@
 	#1
 }
 
+\ifthenelse{\equal{\targetdevice}{pc}}{
+    \newcommand\scpdialogwidth{\linewidth}
+}{
+    \newcommand\scpdialogwidth{0.9\linewidth}
+}
+
 \newtcolorbox{scpdialog}[1][]{
 	hbox, parbox=true, before=\centering,
 	top=2pt, bottom=2pt, left=2pt, right=2pt,
 	boxrule=0.5pt, colback=white, colframe=black,
-	before upper=\begin{varwidth}{\linewidth},
+	before upper=\begin{varwidth}{\scpdialogwidth},
 	after upper=\end{varwidth},
 	#1
 }
