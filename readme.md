@@ -12,7 +12,7 @@ Kindle 版本在机器上的预览照片[见下](#kindle-版)。
 
 如果是手机用户哪个版本都可以，不过我推荐下电脑板，用横屏阅读方式。 
 
-[最新版 v1.5][last-release]
+[最新版 v1.6][last-release]
 
 [历史版本][all-release]
 
@@ -20,12 +20,14 @@ Kindle 版本在机器上的预览照片[见下](#kindle-版)。
 
 SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入背景设定啊什么之类的。
 
+所有文章均[来自 SCP 中文 Wiki][scp-wiki-cn]。
+
 # 包含内容
 
 最新版包含的主要内容：
 
 * SCP 001 的全部提案
-* SCP 002 - 050
+* SCP 002 - 060
 * 一点点基金会 Tale
 * 一些附录
 
@@ -112,6 +114,7 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 [logo]: https://raw.githubusercontent.com/7sDream/scp-pdf/master/images/git_logo.png
 [all-release]: https://github.com/7sDream/scp-pdf/releases
 [last-release]: https://github.com/7sDream/scp-pdf/releases/latest
+[scp-wiki-cn]: http://scp-wiki-cn.wikidot.com/
 [which-fonts-support-project]: https://github.com/7sDream/which_fonts_support
 
 [preview-cover]: http://rikka-10066868.image.myqcloud.com/f50a0449-2c37-4a71-97b6-f35163fbcd04.png
