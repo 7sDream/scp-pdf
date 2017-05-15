@@ -8,11 +8,11 @@ v1.3 版本之后新增了 6 寸 Kindle 专版，使用 Kindle 的用户请下�
 
 Kindle 版本在机器上的预览照片[见下](#kindle-版)。
 
-电脑用户下没后缀的就好。
+电脑用户下载没后缀的就好。
 
-如果是手机用户哪个版本都可以，不过我推荐下电脑板，用横屏阅读方式。 
+手机用户下载哪个版本都可以，不过我推荐下电脑版，用横屏阅读方式。 
 
-[最新版 v1.7][last-release]
+[最新版 v1.9][last-release]
 
 [历史版本][all-release]
 
@@ -27,8 +27,9 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 最新版包含的主要内容：
 
 * SCP 001 的全部提案
-* SCP 002 - 060
-* 一点点基金会 Tale
+* SCP 002 - 090
+* 已收录 SCP 项目的相关档案和 Tale
+* 传承篇目列表
 * 一些附录
 
 # 预览
@@ -73,17 +74,24 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 
 使用 XeLaTeX，Linux 把 tex-live 的包啥的装一装应该就可以……我也不清楚
 
+我自己的编译命令就是简单的：
+
+```bash
+xelatex scp.tex
+```
+
+然后等着就行了。
+
 ## 字体
 
-中文使用 Noto Sans CJK SC
+需要安装：
 
-英文使用 Noto Sans
-
-中文等宽使用 Noto Sans Mono CJK SC
-
-英文等宽使用 SF Mono
-
-另外有些以上字体不支持的特殊字符使用了 Noto Emoji，FreeSerif，DejaVu Sans 等等。
+* Noto Sans CJK SC（中文）
+* Noto Sans（英文）
+* Noto Sans Mono CJK SC（中文等宽）
+* SF Mono（英文等宽）
+* Noto Emoji（Emoji）
+* FreeSerif，DejaVu Sans（其他特殊字符）
 
 为了找支持某特殊字符的字体这个我还写了个[小脚本][which-fonts-support-project]。
 
