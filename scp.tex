@@ -5,7 +5,7 @@
 % {kindle} for 6' pdf for kinder, less page margin, para skip, chapter skip, 
 % with hyperlink border, etc.
 
-\def\targetdevice{kindle}
+\def\targetdevice{pc}
 
 \include{preamble/index}
 
@@ -14,27 +14,31 @@
 \includeonly{
 cover, 
 part00/index, 
-part01/index, 
-docs/index, 
-compilation/index, 
+part01/index,
+tale/index,
+compilation/index,
 appendices/index,
 changelog,
 }
 
 \hypersetup{
-    pdftitle={SCP基金会内部人员手册},
-    pdfauthor={SCP基金会中国分部}
+pdftitle={SCP基金会内部人员手册},
+pdfauthor={SCP基金会中国分部}
 }
 
 \begin{document}
 
-
+% 对话框初始设置
 \tcbsetforeverylayer{
-	arc=0pt, outer arc=0pt, 
-	left=10pt, right=10pt,top=10pt, bottom=10pt, 
-	after skip=12pt, 
-	parbox=false, breakable,
+arc=0pt, outer arc=0pt, 
+left=10pt, right=10pt,top=10pt, bottom=10pt, 
+after skip=12pt, 
+parbox=false, breakable,
 }
+
+% 这两个宏用于文档未翻译的模板，会在各 chapter 中重新定义使用
+\newcommand{\DOCNAME}{}
+\newcommand{\DOCSLUG}{}
 
 \frontmatter
 
@@ -49,8 +53,6 @@ changelog,
 \include{part01/index}
 
 \include{tale/index}
-
-\include{docs/index}
 
 \include{compilation/index}
 
