@@ -12,7 +12,7 @@ Kindle 版本在机器上的预览照片[见下](#kindle-版)。
 
 手机用户下载哪个版本都可以，不过我推荐下电脑版，用横屏阅读方式。 
 
-[最新版 v1.9][last-release]
+[最新版 v1.10][last-release]
 
 [历史版本][all-release]
 
@@ -27,7 +27,7 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 最新版包含的主要内容：
 
 * SCP 001 的全部提案
-* SCP 002 - 090
+* SCP 002 - 100
 * 已收录 SCP 项目的相关档案和 Tale
 * 传承篇目列表
 * 一些附录
@@ -42,11 +42,11 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 
 ![Contents][preview-contents]
 
+![preview-heritage][preview-heritage]
+
 ## 各种框框
 
 ![Box1][preview-box]
-
-![Box1][preview-box2]
 
 ## 字体颜色
 
@@ -64,9 +64,11 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 
 ![box][preview-kindle-box]
 
+![text][preview-kindle-text]
+
 ![cover][preview-kindle-cover]
 
-![text][preview-kindle-text]
+![preview-kindle-heritage][preview-kindle-heritage]
 
 # 编译
 
@@ -127,12 +129,13 @@ xelatex scp.tex
 
 [preview-cover]: http://rikka-10066868.image.myqcloud.com/f50a0449-2c37-4a71-97b6-f35163fbcd04.png
 [preview-contents]: http://rikka-10066868.image.myqcloud.com/60a49415-f846-4054-b362-28d4edb18153.png
-[preview-box]: http://rikka-10066868.image.myqcloud.com/d990c77f-4e32-4f87-8070-5633c55db25a.png
-[preview-box2]: http://rikka-10066868.image.myqcloud.com/ecb1be0b-6541-4776-a05c-f122c731e2dd.png
+[preview-heritage]: http://rikka-10066868.image.myqcloud.com/902317c6-10eb-4bf5-bb0a-42947e37a9ba.png
+[preview-box]: http://rikka-10066868.image.myqcloud.com/ecb1be0b-6541-4776-a05c-f122c731e2dd.png
 [preview-color]: http://rikka-10066868.image.myqcloud.com/257c1aca-9031-41e7-b821-f3f06d10a734.png
 [preview-emoji]: http://rikka-10066868.image.myqcloud.com/f48ce1e8-0c4e-470e-ad3c-7a5670045591.png
 [preview-table]: http://rikka-10066868.image.myqcloud.com/91f2e472-296a-4b8e-8b58-b99787c683e0.png
 
 [preview-kindle-cover]: http://rikka-10066868.image.myqcloud.com/5461794e-821f-4b2d-ba31-6c7b5eb604bc.png
+[preview-kindle-heritage]: http://rikka-10066868.image.myqcloud.com/2d6618c6-1eab-4074-9bb8-7532d806f58e.jpeg
 [preview-kindle-box]: http://rikka-10066868.image.myqcloud.com/c5831e83-5157-4823-8bb3-144bd4dbc447.png
 [preview-kindle-text]: http://rikka-10066868.image.myqcloud.com/fb2cd4d7-60b8-4164-a3c7-226b4c1efd35.png
