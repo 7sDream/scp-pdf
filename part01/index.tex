@@ -7,20 +7,13 @@
 
 \setcounter{chapter}{1}
 
-\newcommand{\filename}{}
 
 \foreach \idx in {2,...,9} {
-    \renewcommand{\filename}{part01/00\idx}
-    \IfFileExists{\filename}{
-        \input{\filename}
-    }
+    \input{part01/00\idx}
 }
 
 \foreach \idx in {10,...,99} {
-    \renewcommand{\filename}{part01/0\idx}
-    \IfFileExists{\filename}{
-        \input{\filename}
-    }
+    \input{part01/0\idx}
 }
 
-\let\filename\undefined
+\input{part01/100}
