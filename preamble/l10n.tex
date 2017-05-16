@@ -9,24 +9,29 @@
 % 设置章节标题格式
 \usepackage{titlesec}
 
- % part 标题用阿拉伯数字编号
+% part 标题用阿拉伯数字编号
 \renewcommand{\thepart}{\arabic{part}}
 
- % 设置 Part 标题样式，单独成页，Huge 字体，前缀使用第x章
+% 设置 Part 标题样式，单独成页，Huge 字体，前缀使用第x章
 \titleformat{\part}[display]{\center\Huge\bf}{第 \thepart 章}{1em}{}
-
- % 设置 Chapter 样式，标号与章节名同行，Large 字体，前缀使用数字序号，减少上部间距
+% 设置 Chapter 样式，标号与章节名同行，Large 字体，前缀使用数字序号，减少上部间距
 \titleformat{\chapter}[hang]{\center\Large\bf}{\thechapter.}{1em}{}\titlespacing*{\chapter}{0pt}{-30pt}{40pt}
+% 设置 Section 样式，标号与章节名同行，Large 字体，前缀使用数字序号，减少上部间距
+\titleformat{\section}[hang]{\center\large\bf}{}{1em}{}
 
 % 设置目录格式
 \usepackage{titletoc}
- % 改 content 为目录
+
+% 改 content 为目录
 \renewcommand{\contentsname}{目录}
- % 设置目录里 part 的样式
- % 参数顺序 {section}{left-margin}{global-format}{numbered-entry-format}{numberless-entry-format}{page number format}{after}
+
+% 参数顺序 {section}{left-margin}{global-format}{numbered-entry-format}{numberless-entry-format}{page number format}{after}
+% 设置目录里 part 的样式
 \titlecontents{part}[0pt]{}{}{}{\titlerule*[8pt]{$\cdot$}\bf\contentspage}{}
- % 设置目录里 chapter 的样式
+% 设置目录里 chapter 的样式
 \titlecontents{chapter}[2em]{}{\linkcolor{\thecontentslabel.\ }}{}{\titlerule*[8pt]{$\cdot$}\bf\contentspage}{}
+% 设置目录里 section 的样式
+\titlecontents{section}[4em]{}{}{}{\titlerule*[8pt]{$\cdot$}\bf\contentspage}{}
 
 % 图片标题格式改为 <part>-<chapter>-<index> 形式
 \renewcommand{\thefigure}{\thepart-\thechapter-\arabic{figure}}
