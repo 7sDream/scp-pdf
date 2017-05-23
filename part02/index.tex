@@ -1,0 +1,13 @@
+\part{SCP-101 \textasciitilde\ 200}
+
+\setcounter{chapter}{0}
+
+\foreach \idx in {101,...,200} {
+    \IfFileExists{part02/\idx.tex}
+        {
+            \input{part02/\idx}
+        }
+    % else
+        {
+        }
+}
