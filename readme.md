@@ -117,9 +117,7 @@ xelatex scp.tex
 
 ## LICENSE
 
-我也不知道这种东西需要什么 LICENSE。
-
-反正只要不拿 PDF 印书卖钱，不违反 SCP 原作者们和译者的协议，我这里就随意吧。
+CC-BY-SA
 
 [logo]: https://raw.githubusercontent.com/7sDream/scp-pdf/master/images/git_logo.png
 [all-release]: https://github.com/7sDream/scp-pdf/releases
