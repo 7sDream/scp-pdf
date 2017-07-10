@@ -1,5 +1,5 @@
 % 文档里的特殊字符使用特定字体显示
-% 如果需要增加字体，需要在 preface/font_char.tex 中增加
+% 如果需要增加字体，需要在下列「定义特殊字符备用字体」一节中增加
 
 % 使用方法：\<font>{<char>}，文档中的 <char> 字符使用 <font> 字体显示。
 
@@ -8,22 +8,22 @@
 
 % 定义特殊字符备用字体
 \newfontfamily{\emojifont}{Noto Emoji}
-\newfontfamily{\ntscjkscfont}{Noto Sans CJK SC}
-\newfontfamily{\djvsfont}{DejaVu Sans}
-\newfontfamily{\freeseriffont}{FreeSerif}
-
-% 定义辅助命令
 \DeclareTextFontCommand{\useemoji}{\emojifont}
-\DeclareTextFontCommand{\usentscjksc}{\ntscjkscfont}
-\DeclareTextFontCommand{\usedjvs}{\djvsfont}
-\DeclareTextFontCommand{\usefreeserif}{\freeseriffont}
-
 \newcommand{\emoji}[1]{\newunicodechar{#1}{\useemoji{#1}}}
+
+\newfontfamily{\ntscjkscfont}{Noto Sans CJK SC}
+\DeclareTextFontCommand{\usentscjksc}{\ntscjkscfont}
 \newcommand{\ntscjksc}[1]{\newunicodechar{#1}{\usentscjksc{#1}}}
+
+\newfontfamily{\djvsfont}{DejaVu Sans}
+\DeclareTextFontCommand{\usedjvs}{\djvsfont}
 \newcommand{\djvs}[1]{\newunicodechar{#1}{\usedjvs{#1}}}
+
+\newfontfamily{\freeseriffont}{FreeSerif}
+\DeclareTextFontCommand{\usefreeserif}{\freeseriffont}
 \newcommand{\freeserif}[1]{\newunicodechar{#1}{\usefreeserif{#1}}}
 
-% 
+% SCP-001.when.day.breaks
 \emoji{🔥}
 
 % SCP-001.the.factory
@@ -39,4 +39,7 @@
 \ntscjksc{⦿}
 
 % SCP-111
-\ntscjksc{℃}
+\djvs{℃}
+
+% SCP-116
+\djvs{≧}
