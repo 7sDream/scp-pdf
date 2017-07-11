@@ -17,10 +17,13 @@
 % 章节标题页页开启页眉
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
+% 减少章节上间距
+\titlespacing{\chapter}{0pt}{10pt}{40pt}
+
 % 清除空白目录页的标题和页码
 \let\origdoublepage\cleardoublepage
 \newcommand{\clearemptydoublepage}{\clearpage{\pagestyle{empty}\origdoublepage}}
 \let\cleardoublepage\clearemptydoublepage
 
 % 图标题允许多行
-\usepackage{caption}
+\usepackage[justification=centering]{caption}
