@@ -12,7 +12,7 @@ Kindle 版本在机器上的预览照片[见下](#kindle-版)。
 
 手机用户下载哪个版本都可以，不过我推荐下电脑版，用横屏阅读方式。 
 
-[最新版 v1.12][last-release]
+[最新版 v1.13][last-release]
 
 [历史版本][all-release]
 
