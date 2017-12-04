@@ -91,7 +91,7 @@ xelatex scp.tex
 * Noto Sans CJK SC（中文）
 * Noto Sans（英文）
 * Noto Sans Mono CJK SC（中文等宽）
-* SF Mono（英文等宽）
+* Fira Code（英文等宽）
 * Noto Emoji（Emoji）
 * FreeSerif，DejaVu Sans（其他特殊字符）
 
