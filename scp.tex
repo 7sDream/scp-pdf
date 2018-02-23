@@ -1,11 +1,15 @@
 \documentclass[a4paper, openany, tikz]{book}
 
 % {pc} for normal pdf as a4paper
-% 
-% {kindle} for 6' pdf for kinder, less page margin, para skip, chapter skip, 
-% with hyperlink border, etc.
-
+% {kindle} for 6' pdf for kinder, less page margin, para skip, chapter skip, with hyperlink border, etc.
 \def\targetdevice{pc}
+
+% {notofira} for Noto Sans CJK + Noto Sans Mono CJK + Noto Sans + Fira Code
+% {sarasa} for Sarasa Gothic SC + Sarasa Mono SC + Sarasa Gothic SC + Sarasa Mono SC
+% 
+% Notice: Chinese & Janapes char of Sarasa font is based on Source Han Sans (another name of Noto Sans CJK),
+% So these two configures should be differ only in English monospaced characters
+\def\targetfonts{notofira}
 
 \include{preamble/index}
 

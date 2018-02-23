@@ -6,13 +6,8 @@
 % 中文字体支持，开启粗体和斜体
 \usepackage[BoldFont, SlantFont]{xeCJK}
 
-% 设置默认中文字体
-\setCJKmainfont[BoldFont={Noto Sans CJK SC Bold}, AutoFakeSlant=0.3]{Noto Sans CJK SC}
-\setCJKmonofont[BoldFont={Noto Sans Mono CJK SC Bold}, AutoFakeSlant=0.3]{Noto Sans Mono CJK SC}
-
-% 设置英文字体
-\setmainfont[AutoFakeSlant=0.3]{Noto Sans}
-\setmonofont[AutoFakeSlant=0.3]{Fira Code}
+% 根据配置设置字体
+\input{preamble/font_\targetfonts}
 
 % 数学公式与数学符号
 \usepackage{amsmath,amssymb}

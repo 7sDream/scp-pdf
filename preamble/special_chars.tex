@@ -11,9 +11,9 @@
 \DeclareTextFontCommand{\useemoji}{\emojifont}
 \newcommand{\emoji}[1]{\newunicodechar{#1}{\useemoji{#1}}}
 
-\newfontfamily{\ntscjkscfont}{Noto Sans CJK SC}
-\DeclareTextFontCommand{\usentscjksc}{\ntscjkscfont}
-\newcommand{\ntscjksc}[1]{\newunicodechar{#1}{\usentscjksc{#1}}}
+\newfontfamily{\cjkmainfont}{\targetcjkmainfont}
+\DeclareTextFontCommand{\usecjkmain}{\cjkmainfont}
+\newcommand{\cjkmain}[1]{\newunicodechar{#1}{\usecjkmain{#1}}}
 
 \newfontfamily{\djvsfont}{DejaVu Sans}
 \DeclareTextFontCommand{\usedjvs}{\djvsfont}
@@ -27,16 +27,16 @@
 \emoji{🔥}
 
 % SCP-001.the.factory
-\ntscjksc{⋯}
+\cjkmain{⋯}
 
 % SCP-001.the.children
 \freeserif{❚}
 
 % SCP-001.a.record
 \djvs{ת}
-\ntscjksc{▷}
-\ntscjksc{▽}
-\ntscjksc{⦿}
+\cjkmain{▷}
+\cjkmain{▽}
+\cjkmain{⦿}
 
 % SCP-111
 \djvs{℃}
