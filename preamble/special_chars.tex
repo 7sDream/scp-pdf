@@ -23,6 +23,13 @@
 \DeclareTextFontCommand{\usefreeserif}{\freeseriffont}
 \newcommand{\freeserif}[1]{\newunicodechar{#1}{\usefreeserif{#1}}}
 
+\xeCJKDeclareSubCJKBlock{SIP}
+{
+	"20000 -> "2A6DF , % CJK Unified Ideographs Extension B
+	"2A700 -> "2B73F , % CJK Unified Ideographs Extension C
+	"2B740 -> "2B81F   % CJK Unified Ideographs Extension D
+}
+
 % SCP-001.when.day.breaks
 \emoji{🔥}
 
@@ -38,8 +45,11 @@
 \cjkmain{▽}
 \cjkmain{⦿}
 
+% SCP-001.normalcy 更*多*报告-仅限O5阅读
+\setCJKmainfont[SIP]{HanaMinB}
+
 % SCP-111
-\djvs{℃}
+\cjkmain{℃}
 
 % SCP-116
-\djvs{≧}
+\cjkmain{≧}

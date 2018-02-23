@@ -10,7 +10,7 @@ Kindle 版本在机器上的预览照片[见下](#kindle-版)。
 
 电脑用户下载没后缀的就好。
 
-手机用户下载哪个版本都可以，不过我推荐下电脑版，用横屏阅读方式。 
+手机用户下载哪个版本都可以，不过我推荐下电脑版，用横屏阅读方式。
 
 [最新版 v1.15][last-release]
 
@@ -88,12 +88,18 @@ xelatex scp.tex
 
 需要安装：
 
-* Noto Sans CJK SC（中文）
-* Noto Sans（英文）
-* Noto Sans Mono CJK SC（中文等宽）
-* Fira Code（英文等宽）
-* Noto Emoji（Emoji）
-* FreeSerif，DejaVu Sans（其他特殊字符）
+- notofira 配置
+  * Noto Sans CJK SC（中文）
+  * Noto Sans（英文）
+  * Noto Sans Mono CJK SC（中文等宽）
+  * Fira Code（英文等宽）
+- saresa 配置
+  * Sarasa Gothic
+- 特殊字符公用字体
+  * Noto Emoji（Emoji）
+  * FreeSerif（特殊符号）
+  * DejaVu Sans（特殊符号）
+  * HanaMinB （中日韩统一表意文字扩展区字符）
 
 为了找支持某特殊字符的字体这个我还写了个[小脚本][which-fonts-support-project]。
 

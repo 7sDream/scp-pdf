@@ -34,6 +34,10 @@
 % 脚注
 % \usepackage{footnote}
 \usepackage[hang, flushmargin, multiple]{footmisc}
+% change footnote number when enter next part
+\usepackage{chngcntr}
+\counterwithin*{footnote}{part}
+\counterwithin*{footnote}{section}
 
 % 引用增强，包括url，自定义文字引用等
 % colorlinks = 可点击项有颜色， linkcolor = 文内交叉引用颜色，urlcolor = URL 颜色
