@@ -3,20 +3,22 @@ VERSION       := $(shell sed -n '/vhEntry/{n;p;}' changelog.tex | tail -n 1 | se
 LATEXMKFLAG   := -quiet -xelatex
 LATEXMKOUTDIR := -jobname=
 
-$(info !!! Current version: ${VERSION})
+$(info !!! Current version: $(VERSION))
 
 scp.pdf:
-	$(info !!! Building test version: $ ...)
-	latexmk $(LATEXMKFLAG) ${SOURCE}
+	$(info !!! Building test version: $(VERSION) ...)
+	@latexmk $(LATEXMKFLAG) ${SOURCE}
 
 define build
 	$(info !!! Set target to $(1))
 	$(info !!! Set font to $(2))
-	@sed -r -e 's/targetdevice\{(.*)\}/targetdevice{$(1)}/g' -e 's/targetfonts\{(.*)\}/targetfonts{$(2)}/g' ${SOURCE} > $(3).tex
+	@sed -r -e 's/targetdevice\{(.*)\}/targetdevice{$(1)}/g' \
+       		-e 's/targetfonts\{(.*)\}/targetfonts{$(2)}/g' \
+       		${SOURCE} > $(3).tex
 	$(info !!! Building $(3) ...)
 	@latexmk $(LATEXMKFLAG) $(LATEXMKOUTDIR)$(3) $(3).tex
 	@mv $(3).pdf $(3)
-	rm $(3).tex
+	@rm $(3).tex
 endef
 
 scp.pc.notofira.$(VERSION).pdf: $(BUILDDIR)
