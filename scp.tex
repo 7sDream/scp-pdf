@@ -11,6 +11,17 @@
 % So these two configures should be differ only in English monospaced characters
 \def\targetfonts{notofira}
 
+% make aux file different in different job
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@include}{\@input{#1.aux}}{\@input{#1-\jobname.aux}}{}{%
+  \errmessage{First patch of \noexpand\@include failed.}%
+}
+\patchcmd{\@include}{\@partaux #1.aux}{\@partaux#1-\jobname.aux}{}{%
+  \errmessage{Second patch of \noexpand\@include failed.}%
+}
+\makeatother
+
 \include{preamble/index}
 
 \include{editors}
