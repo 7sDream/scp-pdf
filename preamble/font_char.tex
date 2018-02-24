@@ -17,6 +17,15 @@
 
  % 下划线，删除线
 \usepackage{xeCJKfntef}
+% 去掉删除线下划线之类的默认颜色
+\xeCJKsetup{
+    underdot/format=,
+    underline/format=,
+    underdblline/format=,
+    underwave/format=,
+    sout/format=,
+    xout/format=,
+}
 
 % 导入特殊字符列表
 \input{preamble/special_chars.tex}

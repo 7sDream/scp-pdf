@@ -17,7 +17,7 @@
 \newcommand{\bi}[1]{\textit{\textbf{#1}}}
 \newcommand{\uu}{\CJKunderline}
 \newcommand{\dd}{\CJKsout}
-\newcommand{\bu}[1]{\CJKunderline{\textbf{#1}}}
+\newcommand{\bu}[1]{\textbf{\CJKunderline{#1}}}
 \newcommand{\bd}[1]{\textbf{\CJKsout{#1}}}
 
 % 文本等宽
@@ -46,7 +46,7 @@
 \makeatletter
 \def\overtextnote#1{\expandafter\overtextnote@aux#1\@nil}
 \ifthenelse{\equal{\targetdevice}{pc}}{
-	\def\overtextnote@aux#1(#2)\@nil{\renewcommand{\arraystretch}{0.5}\begin{tabular}[b]{@{}c@{}}#2\\#1\end{tabular}\renewcommand{\arraystretch}{1.5}}
+	\def\overtextnote@aux#1(#2)\@nil{\renewcommand{\arraystretch}{0.5}\begin{tabular}[b]{@{}c@{}}\scriptsize #2\\#1\end{tabular}\renewcommand{\arraystretch}{1.5}}
 }{
     \def\overtextnote@aux#1(#2)\@nil{#1（{#2}）}
 }
