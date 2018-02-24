@@ -86,15 +86,19 @@ xelatex scp.tex
 
 ## 字体
 
-需要安装：
+目前有两个字体配置的版本，`notofira` 和 `sarasa`。
+
+它们分别需要安装的字体见下表（特殊字符字体任何配置均需要安装）：
 
 - notofira 配置
   * Noto Sans CJK SC（中文）
-  * Noto Sans（英文）
   * Noto Sans Mono CJK SC（中文等宽）
+  * Noto Sans（英文）
   * Fira Code（英文等宽）
 - saresa 配置
-  * Sarasa Gothic
+  * Sarasa Gothic （中文，中文等宽）
+  * Noto Sans （英文）
+  * Iosevka Term （英文等宽）
 - 特殊字符公用字体
   * Noto Emoji（Emoji）
   * FreeSerif（特殊符号）
