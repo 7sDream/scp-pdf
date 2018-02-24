@@ -15,46 +15,29 @@ checkclean:
 	@git diff --exit-code > /dev/null
 	@git diff --cached --exit-code > /dev/null
 
-define finish_build
+define build
+	$(info !!! Set target to $(1))
+        @sed -i -r -e 's/targetdevice\{(.*)\}/targetdevice{$(1)}/g' ${SOURCE}
+        $(info !!! Set font to $(2))
+        @sed -i -r -e 's/targetfonts\{(.*)\}/targetfonts{$(2)}/g' ${SOURCE}
+        $(info !!! Building $@ ...)
+        latexmk $(LATEXMKFLAG) $(LATEXMKOUTDIR)/$(3) ${SOURCE}
 	git checkout -- $(SOURCE)
-	mv $(OUTDIR)/$(1).pdf $(OUTDIR)/$(1)
+	mv $(OUTDIR)/$(3).pdf $(OUTDIR)/$(3)
+	find $(OUTDIR) -type f -not -name "*.pdf" -delete
 endef
 
 scp.pc.notofira.$(VERSION).pdf: checkclean
-	$(info !!! Set target to PC)
-	@sed -i -r -e 's/targetdevice\{(.*)\}/targetdevice{pc}/g' ${SOURCE}
-	$(info !!! Set Font to Noto+Fira)
-	@sed -i -r -e 's/targetfonts\{(.*)\}/targetfonts{notofira}/g' ${SOURCE}
-	$(info !!! Building $@ ...)
-	latexmk $(LATEXMKFLAG) $(LATEXMKOUTDIR)/$@ ${SOURCE}
-	$(call finish_build,$@)
+	$(call build,pc,notofira,$@)
 
 scp.pc.sarasa.$(VERSION).pdf: checkclean
-	$(info !!! Set target to PC)
-	@sed -i -r -e 's/targetdevice\{(.*)\}/targetdevice{pc}/g' ${SOURCE}
-	$(info !!! Set font to Sarasa)
-	@sed -i -r -e 's/targetfonts\{(.*)\}/targetfonts{sarasa}/g' ${SOURCE}
-	$(info !!! Building $@ ...)
-	latexmk $(LATEXMKFLAG) $(LATEXMKOUTDIR)/$@ ${SOURCE}
-	$(call finish_build,$@)
+	$(call build,pc,sarasa,$@)
 
 scp.kindle.notofira.$(VERSION).pdf: checkclean
-	$(info !!! Set target to Kindle)
-	@sed -i -r -e 's/targetdevice\{(.*)\}/targetdevice{kindle}/g' ${SOURCE}
-	$(info !!! Set font to Noto+Fira)
-	@sed -i -r -e 's/targetfonts\{(.*)\}/targetfonts{notofira}/g' ${SOURCE}
-	$(info !!! Building $@ ...)
-	latexmk $(LATEXMKFLAG) $(LATEXMKOUTDIR)/$@ ${SOURCE}
-	$(call finish_build,$@)
+	$(call build,kindle,notofira,$@)
 
 scp.kindle.sarasa.$(VERSION).pdf: checkclean
-	$(info !!! Set target to Kindle)
-	@sed -i -r -e 's/targetdevice\{(.*)\}/targetdevice{kindle}/g' ${SOURCE}
-	$(info !!! Set font to Sarasa)
-	@sed -i -r -e 's/targetfonts\{(.*)\}/targetfonts{sarasa}/g' ${SOURCE}
-	$(info !!! Building $@ ...)
-	latexmk $(LATEXMKFLAG) $(LATEXMKOUTDIR)/$@ ${SOURCE}
-	$(call finish_build,$@)
+	$(call build,kindle,sarasa,$@)
 
 $(OUTDIR):
 	@mkdir -p $(OUTDIR)
