@@ -5,7 +5,7 @@ LATEXMKOUTDIR := -jobname=
 
 $(info !!! Current version: ${VERSION})
 
-scp.pdf: $(BUILDDIR)
+scp.pdf:
 	$(info !!! Building test version: $ ...)
 	latexmk $(LATEXMKFLAG) ${SOURCE}
 
@@ -30,9 +30,6 @@ scp.kindle.notofira.$(VERSION).pdf: $(BUILDDIR)
 
 scp.kindle.sarasa.$(VERSION).pdf: $(BUILDDIR)
 	$(call build,kindle,sarasa,$@)
-
-$(BUILDDIR):
-	@mkdir -p $(BUILDDIR)
 
 all: scp.pc.notofira.$(VERSION).pdf scp.pc.sarasa.$(VERSION).pdf scp.kindle.notofira.$(VERSION).pdf scp.kindle.sarasa.$(VERSION).pdf
 
