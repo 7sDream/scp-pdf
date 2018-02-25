@@ -85,6 +85,15 @@ latexmk -xelatex scp.tex
 
 然后等着就行了。
 
+如果你想编译所有版本，请确认所有字体均已安装后，使用：
+
+```bash
+make all
+make clean
+```
+
+进行编译和删除编译产生的临时文件。
+
 ## 字体
 
 目前有两个字体配置的版本，`notofira` 和 `sarasa`。
