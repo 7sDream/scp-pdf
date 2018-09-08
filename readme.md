@@ -71,29 +71,6 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 
 ![preview-kindle-heritage][preview-kindle-heritage]
 
-# 编译
-
-## LaTeX
-
-使用 XeLaTeX，Linux 把 tex-live 的包啥的装一装应该就可以……我也不清楚
-
-我自己的编译命令就是简单的：
-
-```bash
-latexmk -xelatex scp.tex
-```
-
-然后等着就行了。
-
-如果你想编译所有版本，请确认所有字体均已安装后，使用：
-
-```bash
-make all
-make clean
-```
-
-进行编译和删除编译产生的临时文件。
-
 ## 字体
 
 目前有两个字体配置的版本，`notofira` 和 `sarasa`。
@@ -121,6 +98,68 @@ make clean
 ![font-configure-compare][font-configure-compare]
 
 为了找支持某特殊字符的字体这个我还写了个[小脚本][which-fonts-support-project]。
+
+# 从源文件编译
+
+### Linux
+
+因为各个 Linux 包差别较大，无法做统一说明，请各位自行查阅使用发行版的软件仓库安装上述字体（如果仓库里没有就手动安装一下）。
+
+然后安装 `tex-live` 这个包，一般发型版里这个包还是都有的。
+
+### macOS
+
+#### 安装 MacTex
+
+```bash
+brew cask install mactex
+```
+
+#### 安装所需字体
+
+必选字体
+
+```bash
+brew cask install font-dejavu-sans font-freesans font-hanamina font-noto-emoji
+```
+
+如果你想使用 notofira 配置编译，需还安装：
+
+```bash
+brew cask install font-noto-sans-cjk font-noto-sans font-fira-code
+```
+
+如果使用 sarasa 编译配置，则安装：
+
+```bash
+brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
+```
+
+#### 安装辅助工具
+
+```bash
+brew install gnu-sed --with-default-names
+brew install grep --with-default-names
+```
+
+### Windows
+
+恕我无能为力，Sorry。
+
+### 最后一步
+
+先用 tex-live 自带的升级工具把各个包升级到最新版本。
+
+必须更新的是 `chngcntr` 宏包，它在 1.1a 之前的版本有一个[小问题](https://tex.stackexchange.com/questions/425600/latex-error-command-counterwithout-already-defined)会造成编译失败。
+
+然后尝试编译：
+
+```bash
+git clone https://github.com/7sDream/scp-pdf.git
+cd scp-pdf
+make
+open scp.pdf
+```
 
 ## 计划
 
