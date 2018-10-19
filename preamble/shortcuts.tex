@@ -15,13 +15,13 @@
 \newcommand{\gsix}{\textcolor{greysix}}
 
 % 文本粗体斜体各种线
-\newcommand{\ii}{\textit}
-\newcommand{\bb}{\textbf}
+\newcommand{\ii}[1]{\textit{#1}}
+\newcommand{\bb}[1]{\textbf{#1}}
 \newcommand{\bi}[1]{\textit{\textbf{#1}}}
-\newcommand{\uu}{\CJKunderline}
-\newcommand{\dd}{\CJKsout}
-\newcommand{\bu}[1]{\textbf{\CJKunderline{#1}}}
-\newcommand{\bd}[1]{\textbf{\CJKsout{#1}}}
+\newcommand{\uu}[1]{\CJKunderline*{#1}}
+\newcommand{\dd}[1]{\CJKsout*{#1}}
+\newcommand{\bu}[1]{\textbf{\CJKunderline*{#1}}}
+\newcommand{\bd}[1]{\textbf{\CJKsout*{#1}}}
 
 % 文本等宽
 \newcommand{\mono}[1]{{\ttfamily #1}}
