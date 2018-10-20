@@ -82,7 +82,7 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
   * Noto Sans Mono CJK SC（中文等宽）
   * Noto Sans（英文）
   * Fira Code（英文等宽）
-- saresa 配置
+- sarasa 配置
   * Sarasa Gothic （中文，中文等宽）
   * Noto Sans （英文）
   * Iosevka Term （英文等宽）
@@ -92,8 +92,7 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
   * DejaVu Sans（特殊符号）
   * HanaMinB （中日韩统一表意文字扩展区字符）
 
-这两个字体配置并没有很大区别，仅仅在等宽部分 `sarasa` 能做到中文字符宽度等于两倍
-因为字符宽度，能够更好的对齐，见下图：
+这两个字体配置并没有很大区别，仅仅在等宽部分 `sarasa` 能做到中文字符宽度等于两倍英文字符宽度，能够更好的对齐，见下图：
 
 ![font-configure-compare][font-configure-compare]
 
