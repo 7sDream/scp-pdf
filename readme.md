@@ -104,7 +104,7 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 
 因为各个 Linux 包差别较大，无法做统一说明，请各位自行查阅使用发行版的软件仓库安装上述字体（如果仓库里没有就手动安装一下）。
 
-然后安装 `tex-live` 这个包，一般发型版里这个包还是都有的。
+然后安装 `tex-live` 这个包，一般发行版里这个包还是都有的。
 
 ### macOS
 
@@ -116,7 +116,13 @@ brew cask install mactex
 
 #### 安装所需字体
 
-必选字体
+启用 `brew` 的字体仓库
+
+```bash
+brew tap homebrew/cask-fonts
+```
+
+安装必选字体
 
 ```bash
 brew cask install font-dejavu-sans font-freesans font-hanamina font-noto-emoji
