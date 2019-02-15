@@ -17,6 +17,8 @@ Kindle 版本在机器上的预览照片[见下](#kindle-版)。
 
 [历史版本][all-release]
 
+[Changelog][changelog]
+
 # 介绍
 
 SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入背景设定啊什么之类的。
@@ -191,6 +193,7 @@ CC-BY-SA
 [logo]: https://raw.githubusercontent.com/7sDream/scp-pdf/master/images/git_logo.png
 [all-release]: https://github.com/7sDream/scp-pdf/releases
 [last-release]: https://github.com/7sDream/scp-pdf/releases/latest
+[changelog]: https://github.com/7sDream/scp-pdf/blob/dev/changelog.tex
 [scp-wiki-cn]: http://scp-wiki-cn.wikidot.com/
 
 [which-fonts-support-project]: https://github.com/7sDream/which_fonts_support
