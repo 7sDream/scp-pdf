@@ -1,6 +1,6 @@
 SOURCE        := scp.tex
 VERSION       := $(shell sed -n '/vhEntry/{n;p;}' changelog.tex | tail -n 1 | sed -nr 's/^\{([^}]+)\}.*/\1/p')
-LATEXMKFLAG   := -quiet -xelatex
+LATEXMKFLAG   := -quiet -f -xelatex
 LATEXMKOUTDIR := -jobname=
 
 $(info !!! Current version: $(VERSION))
