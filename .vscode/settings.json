@@ -1,0 +1,25 @@
+{
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk - xelatex",
+            "tools": [
+                "latexmk"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    ]
+}
