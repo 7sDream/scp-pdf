@@ -19,7 +19,7 @@ jobs:
         echo "::add-path::/Library/TeX/texbin"
     
     - name: Install Latexmk
-      run: tlmgr install latexmk
+      run: sudo tlmgr install latexmk
 
     - name: Tap Font Cask
       run: brew tap homebrew/cask-fonts
