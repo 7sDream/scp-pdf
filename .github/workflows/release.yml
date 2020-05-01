@@ -20,7 +20,7 @@ jobs:
       run: brew tap homebrew/cask-fonts
         
     - name: Install Base Fonts
-      run: brew cask install font-dejavu-sans font-freesans font-hanamina font-noto-emoji
+      run: brew cask install font-dejavu font-freesans font-hanamina font-noto-emoji
       
     - name: Install Fonts for [NotoFira] Config
       run: brew cask install font-noto-sans-cjk font-noto-sans font-fira-code
