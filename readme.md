@@ -90,20 +90,20 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 - 特殊字符公用字体
   * Noto Emoji（Emoji）
   * FreeSerif（特殊符号）
-  * DejaVu Sans（特殊符号）
+  * DejaVu（特殊符号）
   * HanaMinB （中日韩统一表意文字扩展区字符）
 
 这两个字体配置并没有很大区别，仅仅在等宽部分 `sarasa` 能做到中文字符宽度等于两倍英文字符宽度，能够更好的对齐，见下图：
 
 ![font-configure-compare][font-configure-compare]
 
-为了找支持某特殊字符的字体这个我还写了个[小脚本][which-fonts-support-project]。
+为了找支持某特殊字符的字体，我还写了个[小脚本][which-fonts-support-project]。
 
 # 从源文件编译
 
 ### Linux
 
-因为各个 Linux 包差别较大，无法做统一说明，请各位自行查阅使用发行版的软件仓库安装上述字体（如果仓库里没有就手动安装一下）。
+因为各个 Linux 发行版差别较大，无法做统一说明，请各位自行查阅使用发行版的软件仓库安装上述字体（如果仓库里没有就手动安装一下）。
 
 然后安装 `tex-live` 这个包，一般发行版里这个包还是都有的。
 
@@ -126,7 +126,7 @@ brew tap homebrew/cask-fonts
 安装必选字体
 
 ```bash
-brew cask install font-dejavu-sans font-freesans font-hanamina font-noto-emoji
+brew cask install font-dejavu font-freesans font-hanamina font-noto-emoji
 ```
 
 如果你想使用 notofira 配置编译，需还安装：
