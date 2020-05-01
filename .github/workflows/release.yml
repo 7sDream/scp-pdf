@@ -40,10 +40,10 @@ jobs:
       run: brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
 
     - name: Refresh Fontconfig Cache
-      uses: fc-cache -frvv
+      run: fc-cache -frvv
 
     - name: Show Installed Fonts
-      uses: fc-list -f "%{file} -> %{family}\n"
+      run: fc-list -f "%{file} -> %{family}\n"
 
     - name: Install GNU Tools for Build
       run: brew install gnu-sed
