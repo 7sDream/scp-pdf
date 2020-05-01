@@ -1,7 +1,14 @@
 SOURCE        := scp.tex
-VERSION       := $(shell sed -n '/vhEntry/{n;p;}' changelog.tex | tail -n 1 | sed -nr 's/^\{([^}]+)\}.*/\1/p')
 LATEXMKFLAG   := -quiet -f -xelatex
 LATEXMKOUTDIR := -jobname=
+UNAME         := $(shell uname)
+SED           := sed
+
+ifeq ($(UNAME),Darwin)
+	SED = gsed
+endif
+
+VERSION       := $(shell $(SED) -n '/vhEntry/{n;p;}' changelog.tex | tail -n 1 | $(SED) -nr 's/^\{([^}]+)\}.*/\1/p')
 
 $(info !!! Current version: $(VERSION))
 
@@ -12,7 +19,7 @@ scp.pdf:
 define build
 	$(info !!! Set target to $(1))
 	$(info !!! Set font to $(2))
-	@sed -r -e 's/targetdevice\{(.*)\}/targetdevice{$(1)}/g' \
+	@$(SED) -r -e 's/targetdevice\{(.*)\}/targetdevice{$(1)}/g' \
        		-e 's/targetfonts\{(.*)\}/targetfonts{$(2)}/g' \
        		${SOURCE} > $(3).tex
 	$(info !!! Building $(3) ...)
@@ -21,34 +28,33 @@ define build
 	@rm $(3).tex
 endef
 
+pc.notofira: scp.pc.notofira.v$(VERSION).pdf
+pc.sarasa: scp.pc.sarasa.v$(VERSION).pdf
+kindle.notofira: scp.kindle.notofira.v$(VERSION).pdf
+kindle.sarasa: scp.kindle.sarasa.v$(VERSION).pdf
+op3.notofira: scp.op3.notofira.v$(VERSION).pdf
+op3.sarasa: scp.op3.sarasa.v$(VERSION).pdf
 
-pc.notofira: scp.pc.notofira.$(VERSION).pdf
-pc.sarasa: scp.pc.sarasa.$(VERSION).pdf
-kindle.notofira: scp.kindle.notofira.$(VERSION).pdf
-kindle.sarasa: scp.kindle.sarasa.$(VERSION).pdf
-op3.notofira: scp.op3.notofira.$(VERSION).pdf
-op3.sarasa: scp.op3.sarasa.$(VERSION).pdf
-
-scp.pc.notofira.$(VERSION).pdf: $(BUILDDIR)
+scp.pc.notofira.v$(VERSION).pdf: $(BUILDDIR)
 	$(call build,pc,notofira,$@)
 
-scp.pc.sarasa.$(VERSION).pdf: $(BUILDDIR)
+scp.pc.sarasa.v$(VERSION).pdf: $(BUILDDIR)
 	$(call build,pc,sarasa,$@)
 
-scp.kindle.notofira.$(VERSION).pdf: $(BUILDDIR)
+scp.kindle.notofira.v$(VERSION).pdf: $(BUILDDIR)
 	$(call build,kindle,notofira,$@)
 
-scp.kindle.sarasa.$(VERSION).pdf: $(BUILDDIR)
+scp.kindle.sarasa.v$(VERSION).pdf: $(BUILDDIR)
 	$(call build,kindle,sarasa,$@)
 
-scp.op3.notofira.$(VERSION).pdf: $(BUILDDIR)
+scp.op3.notofira.v$(VERSION).pdf: $(BUILDDIR)
 	$(call build,op3,notofira,$@)
 
-scp.op3.sarasa.$(VERSION).pdf: $(BUILDDIR)
+scp.op3.sarasa.v$(VERSION).pdf: $(BUILDDIR)
 	$(call build,op3,sarasa,$@)
 
 
-all: scp.pc.notofira.$(VERSION).pdf scp.pc.sarasa.$(VERSION).pdf scp.kindle.notofira.$(VERSION).pdf scp.kindle.sarasa.$(VERSION).pdf scp.op3.notofira.$(VERSION).pdf scp.op3.sarasa.$(VERSION).pdf
+all: pc.notofira pc.sarasa kindle.notofira kindle.sarasa op3.notofira op3.sarasa
 
 clean:
 	git clean -dfX
