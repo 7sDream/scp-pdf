@@ -1,0 +1,110 @@
+name: AutoRelease
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    tags: 'v*'
+
+jobs:
+  release:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install Tex Enviorment
+      run: brew cask install mactex
+
+    - name: Tap Font Cask
+      run: brew tap homebrew/cask-fonts
+        
+    - name: Install Base Fonts
+      run: brew cask install font-dejavu-sans font-freesans font-hanamina font-noto-emoji
+      
+    - name: Install Fonts for [NotoFira] Config
+      run: brew cask install font-noto-sans-cjk font-noto-sans font-fira-code
+      
+    - name: Install Fonts for [Sarasa] Config
+      run: brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
+      
+    - name: Install GNU Tools for Build
+      run: |
+        brew install gnu-sed
+        brew install grep
+
+    - name: Build PDF
+      run: make all
+    
+    - name: Open a Github Release
+      id: release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{ github.ref }}
+        body: new release
+
+    - name: Add [PC NotoFira] Binary to Release
+      uses: actions/upload-release-asset@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        assert_path: ./scp.pc.notofira.${{ github.ref }}.pdf
+        assert_name: scp.pc.notofira.${{ github.ref }}.pdf
+        assert_content_type: application/pdf
+
+
+    - name: Add [PC Sarasa] Binary to Release
+      uses: actions/upload-release-asset@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        assert_path: ./scp.pc.sarasa.${{ github.ref }}.pdf
+        assert_name: scp.pc.sarasa.${{ github.ref }}.pdf
+        assert_content_type: application/pdf
+
+    - name: Add [Kindle NotoFira] Binary to Release
+      uses: actions/upload-release-asset@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        assert_path: ./scp.kindle.notofira.${{ github.ref }}.pdf
+        assert_name: scp.kindle.notofira.${{ github.ref }}.pdf
+        assert_content_type: application/pdf
+
+
+    - name: Add [Kindle Sarasa] Binary to Release
+      uses: actions/upload-release-asset@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        assert_path: ./scp.kindle.sarasa.${{ github.ref }}.pdf
+        assert_name: scp.kindle.sarasa.${{ github.ref }}.pdf
+        assert_content_type: application/pdf
+
+    - name: Add [OP3 NotoFira] Binary to Release
+      uses: actions/upload-release-asset@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        assert_path: ./scp.op3.notofira.${{ github.ref }}.pdf
+        assert_name: scp.op3.notofira.${{ github.ref }}.pdf
+        assert_content_type: application/pdf
+
+
+    - name: Add [OP3 Sarasa] Binary to Release
+      uses: actions/upload-release-asset@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.release.outputs.upload_url }}
+        assert_path: ./scp.op3.sarasa.${{ github.ref }}.pdf
+        assert_name: scp.op3.sarasa.${{ github.ref }}.pdf
+        assert_content_type: application/pdf
