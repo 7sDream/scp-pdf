@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    
+
     - name: Install Fontconfig
       uses: brew install fontconfig
 
@@ -20,28 +20,28 @@ jobs:
       run: |
         brew cask install mactex
         echo "::add-path::/Library/TeX/texbin"
-    
+
     - name: Install Latexmk
       run: sudo tlmgr install latexmk
-    
+
     - name: Update Tex Packages
       run: sudo tlmgr update --all
 
     - name: Tap Font Cask
       run: brew tap homebrew/cask-fonts
-        
+
     - name: Install Base Fonts
       run: brew cask install font-dejavu font-freesans font-hanamina font-noto-emoji
-      
+
     - name: Install Fonts for [NotoFira] Config
       run: brew cask install font-noto-sans-cjk font-noto-sans font-fira-code
-      
+
     - name: Install Fonts for [Sarasa] Config
       run: brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
 
     - name: Refresh Fontconfig Cache
       uses: fc-cache -frvv
-    
+
     - name: Show Installed Fonts
       uses: fc-list -f "%{file} -> %{family}\n"
 
@@ -52,7 +52,7 @@ jobs:
 
     - name: Build PDF
       run: make all
-    
+
     - name: Open a Github Release
       id: release
       uses: actions/create-release@v1
@@ -72,7 +72,6 @@ jobs:
         assert_path: ./scp.pc.notofira.${{ github.ref }}.pdf
         assert_name: scp.pc.notofira.${{ github.ref }}.pdf
         assert_content_type: application/pdf
-
 
     - name: Add [PC Sarasa] Binary to Release
       uses: actions/upload-release-asset@v1
@@ -94,7 +93,6 @@ jobs:
         assert_name: scp.kindle.notofira.${{ github.ref }}.pdf
         assert_content_type: application/pdf
 
-
     - name: Add [Kindle Sarasa] Binary to Release
       uses: actions/upload-release-asset@v1
       env:
@@ -114,7 +112,6 @@ jobs:
         assert_path: ./scp.op3.notofira.${{ github.ref }}.pdf
         assert_name: scp.op3.notofira.${{ github.ref }}.pdf
         assert_content_type: application/pdf
-
 
     - name: Add [OP3 Sarasa] Binary to Release
       uses: actions/upload-release-asset@v1
