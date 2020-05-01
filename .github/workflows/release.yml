@@ -14,7 +14,12 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install Tex Enviorment
-      run: brew cask install mactex
+      run: |
+        brew cask install mactex
+        echo "::add-path::/Library/TeX/texbin"
+    
+    - name: Install Latexmk
+      run: tlmgr install latexmk
 
     - name: Tap Font Cask
       run: brew tap homebrew/cask-fonts
