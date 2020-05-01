@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    
+    - name: Install Fontconfig
+      uses: brew install fontconfig
 
     - name: Install Tex Enviorment
       run: |
@@ -20,6 +23,9 @@ jobs:
     
     - name: Install Latexmk
       run: sudo tlmgr install latexmk
+    
+    - name: Update Tex Packages
+      run: sudo tlmgr update --all
 
     - name: Tap Font Cask
       run: brew tap homebrew/cask-fonts
@@ -32,7 +38,13 @@ jobs:
       
     - name: Install Fonts for [Sarasa] Config
       run: brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
-      
+
+    - name: Refresh Fontconfig Cache
+      uses: fc-cache -frvv
+    
+    - name: Show Installed Fonts
+      uses: fc-list -f "%{file} -> %{family}\n"
+
     - name: Install GNU Tools for Build
       run: |
         brew install gnu-sed
