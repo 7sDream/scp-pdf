@@ -13,8 +13,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Update APT Repo
+      run: sudo apt update
+
     - name: Install Tools
-      run: apt install wget p7zip unzip
+      run: sudo apt install wget p7zip unzip
 
     - name: Install Fontconfig
       run: sudo apt install fontconfig
