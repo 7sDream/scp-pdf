@@ -41,7 +41,7 @@ jobs:
     - name: Install [Sarasa] Config Fonts
       run: |
         wget https://github.com/be5invis/Sarasa-Gothic/releases/download/v0.12.5/sarasa-gothic-ttc-0.12.5.7z -O /tmp/sarasa-gothic.7z
-        7zr -e -o$HOME/.fonts /tmp/sarasa-gothic.7z
+        7zr e -o$HOME/.fonts /tmp/sarasa-gothic.7z
         wget https://github.com/be5invis/Iosevka/releases/download/v2.3.3/ttc-iosevka-2.3.3.zip -O /tmp/iosevka.zip
         unzip /tmp/iosevka.zip -d $HOME/.fonts
         wget https://github.com/be5invis/Iosevka/releases/download/v2.3.3/ttc-iosevka-slab-2.3.3.zip -O /tmp/iosevka-slab.zip
