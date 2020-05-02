@@ -21,9 +21,6 @@ jobs:
         brew cask install mactex
         echo "::add-path::/Library/TeX/texbin"
 
-    - name: Install Latexmk
-      run: sudo tlmgr install latexmk
-
     - name: Update Tex Packages
       run: sudo tlmgr update --all
 
@@ -49,7 +46,9 @@ jobs:
       run: brew install gnu-sed
 
     - name: Build PDF
-      run: make all
+      run: |
+        make cleanall
+        make all
 
     - name: Open a Github Release
       id: release
