@@ -8,51 +8,47 @@ on:
 
 jobs:
   release:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Install Tools
+      run: apt install wget p7zip unzip
+
     - name: Install Fontconfig
-      run: brew install fontconfig
+      run: sudo apt install fontconfig
 
     - name: Install Tex Enviorment
       run: |
-        brew cask install mactex
-        echo "::add-path::/Library/TeX/texbin"
+        sudo apt install texlive texlive-xetex texlive-lang-arabic latexmk
 
-    - name: Update Tex Packages
-      run: sudo tlmgr update --all
-
-    - name: Tap Font Cask
-      run: brew tap homebrew/cask-fonts
+    - name: Make User Fonts Dir
+      run: mkdir ~/.fonts
 
     - name: Install Base Fonts
-      run: brew cask install font-dejavu font-freesans font-hanamina font-noto-emoji
+      run: sudo apt install fonts-dejavu fonts-freefont-otf fonts-hanazono
 
-    - name: Install Fonts for [NotoFira] Config
-      run: brew cask install font-noto-sans-cjk font-noto-sans font-fira-code
+    - name: Install Noto Emoji Font
+      run: wget https://github.com/googlefonts/noto-emoji/raw/master/fonts/NotoEmoji-Regular.ttf -P ~/.fonts/
 
-    - name: Install Fonts for [Sarasa] Config
-      run: brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
+    - name: Install [NotoFira] Configure Fonts
+      run: sudo apt install fonts-noto fonts-firacode
+
+    - name: Install [Sarasa] Config Fonts
+      run: |
+        wget https://github.com/be5invis/Sarasa-Gothic/releases/download/v#{version}/sarasa-gothic-ttc-0.12.5.7z -O /tmp/sarasa-gothic.7z
+        7zr -e -o$HOME/.fonts /tmp/sarasa-gothic.7z
+        wget https://github.com/be5invis/Iosevka/releases/download/v2.3.3/ttc-iosevka-2.3.3.zip -O /tmp/iosevka.zip
+        unzip /tmp/iosevka.zip -d $HOME/.fonts
+        wget https://github.com/be5invis/Iosevka/releases/download/v2.3.3/ttc-iosevka-slab-2.3.3.zip -O /tmp/iosevka-slab.zip
+        unzip /tmp/iosevka-slab.zip -d $HOME/.fonts
 
     - name: Refresh Fontconfig Cache
       run: sudo fc-cache -frvv
 
     - name: Show Installed Fonts
       run: fc-list -f "%{file} -> %{family}\n"
-
-    - name: Install GNU Tools for Build
-      run: brew install gnu-sed
-
-    - name: Try Build
-      run: make
-      continue-on-error: true
-
-    - name: Upload Log
-      uses: actions/upload-artifact@v2
-      with:
-        path: ./scp.log
 
     - name: Build PDF
       run: |
