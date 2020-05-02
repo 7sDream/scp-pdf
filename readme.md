@@ -12,7 +12,7 @@ v1.18 版本之后增加了一加 3 手机版本，名称中带有 `op3`，理�
 
 其他屏幕比例的手机用户下载哪个版本都可以，不过我推荐下电脑版，用横屏阅读方式。
 
-[最新版 v1.18][last-release]
+[最新版 v1.19][last-release]
 
 [历史版本][all-release]
 
@@ -103,9 +103,9 @@ SCP 系列文章的整理，主要包含 SCP 档案，说不定以后会加入�
 
 ### Linux
 
-因为各个 Linux 发行版差别较大，无法做统一说明，请各位自行查阅使用发行版的软件仓库安装上述字体（如果仓库里没有就手动安装一下）。
+因为各个 Linux 发行版差别较大，无法做统一说明。
 
-然后安装 `tex-live` 这个包，一般发行版里这个包还是都有的。
+Ubuntu 下可参考 [Workflow 文件][workflow-file]中的命令搭建编译环境。
 
 ### macOS
 
@@ -129,13 +129,13 @@ brew tap homebrew/cask-fonts
 brew cask install font-dejavu font-freesans font-hanamina font-noto-emoji
 ```
 
-如果你想使用 notofira 配置编译，需还安装：
+为了使用 notofira 配置编译，还需还安装：
 
 ```bash
 brew cask install font-noto-sans-cjk font-noto-sans font-fira-code
 ```
 
-如果使用 sarasa 编译配置，则安装：
+为了使用 sarasa 编译配置，还需安装：
 
 ```bash
 brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
@@ -144,38 +144,39 @@ brew cask install font-sarasa-gothic font-iosevka font-iosevka-slab
 #### 安装辅助工具
 
 ```bash
-brew install gnu-sed --with-default-names
-brew install grep --with-default-names
+brew install gnu-sed
 ```
 
 ### Windows
 
 恕我无能为力，Sorry。
 
-### 最后一步
-
-先用 tex-live 自带的升级工具把各个包升级到最新版本。
-
-必须更新的是 `chngcntr` 宏包，它在 1.1a 之前的版本有一个[小问题](https://tex.stackexchange.com/questions/425600/latex-error-command-counterwithout-already-defined)会造成编译失败。
-
-然后尝试编译：
+### 尝试编译
 
 ```bash
 git clone https://github.com/7sDream/scp-pdf.git
 cd scp-pdf
 make
-open scp.pdf
+```
+
+编译结果为 `scp.pdf` 文件。
+
+### 编译所有版本
+
+```bash
+make cleanall
+make all
 ```
 
 ## 计划
 
-有时间的话就排一个 SCP，争取做到一天一篇？
+社畜没有计划，只能说尽力而为。
 
-每 10 篇发一个版本……大概这样把。（然而上班之后发现完全做不到）
+但版本节奏会保持每 10 篇发一个新版本。
 
-## 帮忙
+## 贡献&协助
 
-按照相同的格式排版一篇试试看，我弄了一些 macro 之类的来辅助排版，常用的格式应该都没问题了。
+可以直接按照相同的格式排版一篇试试看，我弄了一些 macro 之类的来辅助排版，常用的格式应该都没问题了。
 
 从 dev 分支新建一个分支，然后加上你的新篇目，或者做一些校对工作之类的。
 
@@ -184,6 +185,8 @@ open scp.pdf
 然后 PR 到 dev 分支，应该就行了。
 
 一个简易版本的 AutoGen 正在编写中……
+
+如果有任何问题可以直接提 Issue。
 
 ## LICENSE
 
@@ -210,3 +213,5 @@ CC-BY-SA
 [preview-kindle-heritage]: http://rikka-10066868.image.myqcloud.com/2d6618c6-1eab-4074-9bb8-7532d806f58e.jpeg
 [preview-kindle-box]: http://rikka-10066868.image.myqcloud.com/c5831e83-5157-4823-8bb3-144bd4dbc447.png
 [preview-kindle-text]: http://rikka-10066868.image.myqcloud.com/fb2cd4d7-60b8-4164-a3c7-226b4c1efd35.png
+
+[workflow-file]: https://github.com/7sDream/scp-pdf/blob/master/.github/workflows/release.yml
