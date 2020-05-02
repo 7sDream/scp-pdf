@@ -13,6 +13,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Get Tag Version
+      id: tag
+      run: echo ::set-output name=version::$(echo $GITHUB_REF | cut -d/ -f3)
+
     - name: Update APT Repo
       run: sudo apt update
 
@@ -66,7 +70,7 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
         release_name: ${{ github.ref }}
-        body: new release
+        body: ${{ steps.tag.outputs.version }}
 
     - name: Add [PC NotoFira] Binary to Release
       uses: actions/upload-release-asset@v1
@@ -74,8 +78,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.release.outputs.upload_url }}
-        asset_path: ./scp.pc.notofira.${{ github.ref }}.pdf
-        asset_name: scp.pc.notofira.${{ github.ref }}.pdf
+        asset_path: ./scp.pc.notofira.${{ steps.tag.outputs.version }}.pdf
+        asset_name: scp.pc.notofira.${{ steps.tag.outputs.version }}.pdf
         asset_content_type: application/pdf
 
     - name: Add [PC Sarasa] Binary to Release
@@ -84,8 +88,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.release.outputs.upload_url }}
-        asset_path: ./scp.pc.sarasa.${{ github.ref }}.pdf
-        asset_name: scp.pc.sarasa.${{ github.ref }}.pdf
+        asset_path: ./scp.pc.sarasa.${{ steps.tag.outputs.version }}.pdf
+        asset_name: scp.pc.sarasa.${{ steps.tag.outputs.version }}.pdf
         asset_content_type: application/pdf
 
     - name: Add [Kindle NotoFira] Binary to Release
@@ -94,8 +98,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.release.outputs.upload_url }}
-        asset_path: ./scp.kindle.notofira.${{ github.ref }}.pdf
-        asset_name: scp.kindle.notofira.${{ github.ref }}.pdf
+        asset_path: ./scp.kindle.notofira.${{ steps.tag.outputs.version }}.pdf
+        asset_name: scp.kindle.notofira.${{ steps.tag.outputs.version }}.pdf
         asset_content_type: application/pdf
 
     - name: Add [Kindle Sarasa] Binary to Release
@@ -104,8 +108,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.release.outputs.upload_url }}
-        asset_path: ./scp.kindle.sarasa.${{ github.ref }}.pdf
-        asset_name: scp.kindle.sarasa.${{ github.ref }}.pdf
+        asset_path: ./scp.kindle.sarasa.${{ steps.tag.outputs.version }}.pdf
+        asset_name: scp.kindle.sarasa.${{ steps.tag.outputs.version }}.pdf
         asset_content_type: application/pdf
 
     - name: Add [OP3 NotoFira] Binary to Release
@@ -114,8 +118,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.release.outputs.upload_url }}
-        asset_path: ./scp.op3.notofira.${{ github.ref }}.pdf
-        asset_name: scp.op3.notofira.${{ github.ref }}.pdf
+        asset_path: ./scp.op3.notofira.${{ steps.tag.outputs.version }}.pdf
+        asset_name: scp.op3.notofira.${{ steps.tag.outputs.version }}.pdf
         asset_content_type: application/pdf
 
     - name: Add [OP3 Sarasa] Binary to Release
@@ -124,6 +128,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.release.outputs.upload_url }}
-        asset_path: ./scp.op3.sarasa.${{ github.ref }}.pdf
-        asset_name: scp.op3.sarasa.${{ github.ref }}.pdf
+        asset_path: ./scp.op3.sarasa.${{ steps.tag.outputs.version }}.pdf
+        asset_name: scp.op3.sarasa.${{ steps.tag.outputs.version }}.pdf
         asset_content_type: application/pdf
