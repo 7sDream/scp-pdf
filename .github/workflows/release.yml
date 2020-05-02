@@ -45,6 +45,10 @@ jobs:
     - name: Install GNU Tools for Build
       run: brew install gnu-sed
 
+    - name: Try Build
+      run: make all
+      continue-on-error: true
+
     - name: Build PDF
       run: |
         make cleanall
